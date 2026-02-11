@@ -16,3 +16,14 @@ def func(s, t):
         
 
 print(func("anagram", "nagaram"))
+
+
+'''
+Lógica:
+
+--> Se os tamanhos são diferentes, já falhou
+--> Inicializo um contador para cada letra
+--> Incremento contagem para cada caractere da primeira string
+--> Decremento para cada caractere da segunda
+--> Se alguma contagem ficar negativa, não é anagrama
+'''
