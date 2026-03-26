@@ -92,3 +92,6 @@ Toda decisão arquitetural envolve abrir mão de algo para ganhar outra propried
 
 ## Tratamento de Erros
 Define como o sistema reage a falhas, incluindo retries, fallback, logging e recuperação, sendo essencial para resiliência.
+
+## Horizontal Scaling
+Horizontal scaling é a capacidade de aumentar a capacidade de um sistema adicionando mais instâncias e distribuindo a carga entre elas. Ele melhora escalabilidade e disponibilidade ao eliminar pontos únicos de falha, mas exige sistemas stateless, uso de load balancing e, frequentemente, particionamento de dados. Em troca, introduz complexidade relacionada à consistência, coordenação e comunicação distribuída.

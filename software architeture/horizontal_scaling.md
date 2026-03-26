@@ -1,0 +1,31 @@
+# Horizontal Scaling
+
+Horizontal scaling, ou escalabilidade horizontal, é uma das estratégias fundamentais utilizadas para aumentar a capacidade de sistemas modernos. Diferente da escalabilidade vertical, que consiste em adicionar mais recursos a uma única máquina, como CPU ou memória, o horizontal scaling baseia-se na adição de múltiplas instâncias do sistema, distribuindo a carga entre elas. Esse modelo é a base da maioria das arquiteturas distribuídas e sistemas de alta escala utilizados atualmente.
+
+O principal objetivo do horizontal scaling é permitir que um sistema lide com aumento de carga sem depender de um único ponto de processamento. Em vez de tentar tornar uma máquina cada vez mais poderosa, o sistema é projetado para funcionar em múltiplas instâncias independentes que podem ser replicadas conforme necessário. Essa abordagem permite que a capacidade do sistema cresça de forma incremental, adicionando novos nós conforme a demanda aumenta.
+
+Uma das principais vantagens do horizontal scaling é a sua relação com disponibilidade. Como o sistema é composto por múltiplas instâncias, a falha de uma delas não necessariamente compromete o funcionamento geral. Outras instâncias continuam atendendo requisições, tornando o sistema mais resiliente. Esse modelo elimina o problema de ponto único de falha, que é comum em sistemas que dependem exclusivamente de escalabilidade vertical.
+
+Para que o horizontal scaling funcione corretamente, o sistema precisa ser projetado com algumas características fundamentais. A mais importante delas é a capacidade de ser stateless. Em sistemas stateless, cada requisição pode ser processada de forma independente, sem depender de estado armazenado localmente na instância que a recebe. Isso permite que qualquer instância trate qualquer requisição, facilitando a distribuição de carga. Quando estado é necessário, ele deve ser externalizado para componentes como bancos de dados, caches distribuídos ou sistemas de armazenamento compartilhado.
+
+Outro aspecto essencial é a distribuição de carga. Com múltiplas instâncias disponíveis, é necessário um mecanismo que direcione requisições entre elas. Esse papel é normalmente desempenhado por load balancers, que utilizam diferentes estratégias para distribuir o tráfego de forma equilibrada. Sem uma distribuição eficiente, algumas instâncias podem ficar sobrecarregadas enquanto outras permanecem ociosas, reduzindo a eficiência do sistema.
+
+Horizontal scaling também está diretamente relacionado ao particionamento de dados, conhecido como sharding. Em sistemas onde o volume de dados é muito grande, não é suficiente apenas replicar instâncias de aplicação. É necessário dividir os dados entre múltiplos nós, de forma que cada um seja responsável por uma parte do conjunto total. Esse particionamento permite que tanto leitura quanto escrita sejam distribuídas, aumentando significativamente a capacidade do sistema.
+
+No entanto, o horizontal scaling introduz novos desafios, especialmente relacionados à consistência de dados. Quando múltiplas instâncias operam sobre os mesmos dados, garantir que todas mantenham uma visão consistente pode ser complexo. Sistemas distribuídos frequentemente precisam adotar modelos de consistência eventual ou implementar mecanismos de sincronização mais sofisticados, como quorum ou versionamento.
+
+Outro desafio importante é a coordenação entre instâncias. Em um ambiente distribuído, não existe um estado global facilmente acessível. Operações que exigem coordenação, como transações distribuídas, locks globais ou contadores consistentes, tornam-se mais complexas. Isso exige o uso de padrões específicos, como leader election, distributed locking ou filas de mensagens para serializar operações.
+
+A comunicação entre instâncias também se torna um fator crítico. Em vez de chamadas locais, componentes do sistema passam a se comunicar através de rede, o que introduz latência, possibilidade de falhas e necessidade de tratamento de erros. Isso torna conceitos como retry, timeout, circuit breaker e idempotência ainda mais importantes em sistemas horizontalmente escalados.
+
+Além disso, o horizontal scaling exige observabilidade mais robusta. Com múltiplas instâncias executando simultaneamente, entender o comportamento do sistema torna-se mais difícil. Métricas agregadas, logs distribuídos e tracing são necessários para identificar gargalos, falhas e problemas de performance.
+
+Outro ponto relevante é o impacto no deployment. Sistemas que suportam horizontal scaling geralmente utilizam estratégias como rolling updates, blue-green deployment ou canary releases. Isso permite atualizar o sistema gradualmente, sem interrupção de serviço, aproveitando a existência de múltiplas instâncias.
+
+Em ambientes modernos, especialmente na nuvem, o horizontal scaling é frequentemente automatizado por mecanismos de auto scaling. Esses sistemas monitoram métricas como CPU, memória ou taxa de requisições e adicionam ou removem instâncias automaticamente. Isso permite que o sistema se adapte dinamicamente à carga, mantendo desempenho e otimizando custos.
+
+Apesar de suas vantagens, o horizontal scaling não é trivial de implementar. Ele exige que o sistema seja projetado desde o início para funcionar de forma distribuída. Migrar um sistema monolítico e stateful para um modelo horizontal pode ser extremamente complexo, exigindo mudanças significativas na arquitetura.
+
+Em termos de trade-offs, o horizontal scaling oferece alta escalabilidade e resiliência, mas aumenta a complexidade do sistema. Ele exige mais esforço em áreas como consistência, coordenação, observabilidade e operação. Por essa razão, nem todos os sistemas precisam ser horizontalmente escalados desde o início. A decisão deve ser baseada na necessidade real de crescimento e nos requisitos do sistema.
+
+Em resumo, horizontal scaling é uma estratégia que permite que sistemas cresçam adicionando mais instâncias em vez de depender de hardware mais poderoso. Ele é a base de sistemas distribuídos modernos e possibilita alta escalabilidade e disponibilidade, mas exige um design cuidadoso para lidar com os desafios introduzidos pela distribuição.
