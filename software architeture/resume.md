@@ -95,3 +95,6 @@ Define como o sistema reage a falhas, incluindo retries, fallback, logging e rec
 
 ## Horizontal Scaling
 Horizontal scaling é a capacidade de aumentar a capacidade de um sistema adicionando mais instâncias e distribuindo a carga entre elas. Ele melhora escalabilidade e disponibilidade ao eliminar pontos únicos de falha, mas exige sistemas stateless, uso de load balancing e, frequentemente, particionamento de dados. Em troca, introduz complexidade relacionada à consistência, coordenação e comunicação distribuída.
+
+## Observalidade
+Observabilidade é a capacidade de entender o comportamento interno de um sistema através de métricas, logs e traces. Diferente de monitoramento, ela permite investigar problemas desconhecidos e analisar sistemas distribuídos de forma profunda. É essencial para debugging, performance e operação, mas exige boa instrumentação, correlação de dados e controle de custo.
