@@ -87,6 +87,9 @@ SQL prioriza consistência e estrutura rígida. NoSQL prioriza escalabilidade e 
 ## Task Leasing
 Atribui tarefas a workers com tempo limitado. Se o worker falhar, a tarefa volta para a fila, garantindo confiabilidade com risco de duplicação.
 
+## Throttling
+Throttling é o controle da taxa de processamento de requisições para evitar sobrecarga no sistema. Diferente de rate limiting, ele atua de forma mais gradual, podendo atrasar, enfileirar ou reduzir o fluxo de requisições. É essencial para estabilidade, funcionando como uma forma de backpressure e sendo frequentemente combinado com filas, retries e circuit breakers.
+
 ## Throughput vs Latency
 Throughput mede volume de processamento; latency mede tempo de resposta. Melhorar um geralmente impacta o outro, exigindo trade-offs.
 
@@ -95,3 +98,6 @@ Toda decisão arquitetural envolve abrir mão de algo para ganhar outra propried
 
 ## Tratamento de Erros
 Define como o sistema reage a falhas, incluindo retries, fallback, logging e recuperação, sendo essencial para resiliência.
+
+## Rate Limit vs Throttling
+Enquanto o rate limiting define limites **rígidos** de requisições por cliente ou por período de tempo, geralmente resultando em rejeições imediatas (como HTTP 429), o throttling é mais focado em proteger o sistema como um todo, controlando a taxa global de processamento **progressivamente**.
