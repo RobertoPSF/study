@@ -42,6 +42,9 @@ Leitura é mais fácil de escalar com réplicas. Escrita exige coordenação, pa
 ## Event-Driven Architecture
 Baseada em eventos, permite desacoplamento entre componentes. Producers geram eventos e consumers reagem, aumentando escalabilidade e resiliência, mas dificultando rastreabilidade e consistência.
 
+## Fan-Out Pattern
+Fan-out é um padrão onde uma única requisição ou evento é distribuído para múltiplos consumidores que processam em paralelo. Ele aumenta throughput e desacoplamento, sendo comum em arquiteturas orientadas a eventos, mas exige cuidados com consistência, idempotência e tratamento de falhas.
+
 ## Horizontal Scaling
 Horizontal scaling é a capacidade de aumentar a capacidade de um sistema adicionando mais instâncias e distribuindo a carga entre elas. Ele melhora escalabilidade e disponibilidade ao eliminar pontos únicos de falha, mas exige sistemas stateless, uso de load balancing e, frequentemente, particionamento de dados. Em troca, introduz complexidade relacionada à consistência, coordenação e comunicação distribuída.
 
