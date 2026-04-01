@@ -33,6 +33,9 @@ Execução simultânea de operações exige controle rigoroso para evitar incons
 ## Consistência Distribuída
 Garante que múltiplos nós mantenham uma visão coerente dos dados. Pode variar entre consistência forte e eventual, dependendo dos trade-offs entre latência, disponibilidade e complexidade.
 
+## Dead Letter Queue
+Dead Letter Queue é uma fila onde mensagens que falharam após várias tentativas são armazenadas para análise ou reprocessamento. Ela evita que mensagens problemáticas travem o sistema, melhora resiliência e observabilidade, mas exige tratamento adequado para não se tornar apenas um acúmulo de erros ignorados.
+
 ## Escalabilidade
 Capacidade de lidar com aumento de carga. Pode ser vertical (mais recursos) ou horizontal (mais instâncias), sendo esta última a base de sistemas distribuídos modernos.
 
