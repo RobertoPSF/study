@@ -36,6 +36,9 @@ Garante que múltiplos nós mantenham uma visão coerente dos dados. Pode variar
 ## Dead Letter Queue
 Dead Letter Queue é uma fila onde mensagens que falharam após várias tentativas são armazenadas para análise ou reprocessamento. Ela evita que mensagens problemáticas travem o sistema, melhora resiliência e observabilidade, mas exige tratamento adequado para não se tornar apenas um acúmulo de erros ignorados.
 
+## Deadlock Prevention
+Deadlock prevention consiste em evitar ciclos de espera entre processos concorrentes, eliminando condições como espera circular ou hold and wait. Técnicas incluem ordenação de recursos, aquisição antecipada, timeouts e preempção. O objetivo é garantir que o sistema continue progredindo mesmo sob alta concorrência.
+
 ## Escalabilidade
 Capacidade de lidar com aumento de carga. Pode ser vertical (mais recursos) ou horizontal (mais instâncias), sendo esta última a base de sistemas distribuídos modernos.
 
