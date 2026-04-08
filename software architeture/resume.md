@@ -93,6 +93,9 @@ Permite reexecutar operações falhas com intervalos crescentes, aumentando resi
 ## SQL vs NoSQL
 SQL prioriza consistência e estrutura rígida. NoSQL prioriza escalabilidade e flexibilidade, geralmente aceitando consistência eventual.
 
+## System Design
+System Design é o processo de projetar sistemas completos considerando requisitos funcionais e não funcionais, integrando conceitos como escalabilidade, consistência, concorrência e resiliência. O foco está em tomar decisões baseadas em trade-offs e construir soluções que funcionem em produção, não apenas em teoria.
+
 ## Task Leasing
 Atribui tarefas a workers com tempo limitado. Se o worker falhar, a tarefa volta para a fila, garantindo confiabilidade com risco de duplicação.
 
