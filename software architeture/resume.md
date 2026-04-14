@@ -27,6 +27,14 @@ Processo de estimar e ajustar recursos para suportar carga atual e futura. Envol
 ## Circuit Breaker
 Protege o sistema interrompendo chamadas para serviços que estão falhando, evitando efeito cascata. Após um período, permite tentativas controladas para verificar recuperação.
 
+## Clean Architeture vs Hexagonal vs Onion
+
+Hexagonal, Onion e Clean Architecture defendem a mesma ideia central: regras de negócio não devem depender de detalhes externos. A Dependency Rule obriga as dependências a apontarem para dentro, protegendo o domínio.
+
+Hexagonal enfatiza portas e adapters, sendo forte para integrações. Onion enfatiza camadas concêntricas e separação do domínio. Clean Architecture combina as duas e adiciona uma divisão mais explícita entre entidades, casos de uso, adapters e frameworks.
+
+Nenhuma é universalmente melhor. O melhor desenho depende do tamanho do sistema, da quantidade de regras de negócio, da quantidade de integrações e do nível de complexidade que realmente precisa ser controlado.
+
 ## Concorrência
 Execução simultânea de operações exige controle rigoroso para evitar inconsistências. Problemas comuns incluem race conditions, deadlocks e contenção de recursos.
 
