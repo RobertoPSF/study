@@ -47,6 +47,12 @@ Dead Letter Queue é uma fila onde mensagens que falharam após várias tentativ
 ## Deadlock Prevention
 Deadlock prevention consiste em evitar ciclos de espera entre processos concorrentes, eliminando condições como espera circular ou hold and wait. Técnicas incluem ordenação de recursos, aquisição antecipada, timeouts e preempção. O objetivo é garantir que o sistema continue progredindo mesmo sob alta concorrência.
 
+## Domain Driven-Design
+Domain-Driven Design é uma abordagem para alinhar código ao domínio de negócio. Ubiquitous Language garante que todos falem a mesma língua. Bounded Context separa onde cada modelo é válido, evitando conflitos de significado. Aggregates protegem invariantes e controlam consistência dentro de um contexto.
+
+DDD não é sobre arquitetura em si, mas sobre modelagem correta. Ele introduz complexidade intencional para controlar sistemas complexos. Se aplicado sem necessidade, vira sobrecarga. Se ignorado quando necessário, o sistema se torna caótico.
+
+
 ## Escalabilidade
 Capacidade de lidar com aumento de carga. Pode ser vertical (mais recursos) ou horizontal (mais instâncias), sendo esta última a base de sistemas distribuídos modernos.
 
