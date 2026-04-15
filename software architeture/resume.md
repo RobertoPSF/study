@@ -9,6 +9,11 @@ Anti-patterns são soluções aparentemente válidas que geram problemas no long
 ## APIs e Timeouts
 Timeouts definem o tempo máximo de espera por uma resposta externa, evitando que threads ou recursos fiquem bloqueados indefinidamente. São essenciais para resiliência, especialmente quando combinados com retry e circuit breaker.
 
+## API Gateway e BFF
+API Gateway e Backend for Frontend resolvem problemas diferentes dentro de sistemas distribuídos. O API Gateway centraliza preocupações transversais e funciona como ponto único de entrada, devendo permanecer livre de lógica de negócio. O BFF adapta o backend para necessidades específicas de cada cliente, orquestrando serviços e ajustando respostas.
+
+Quando usados juntos, o gateway cuida da infraestrutura e o BFF da experiência do cliente. O uso correto depende do nível real de complexidade do sistema. Usar cedo demais adiciona custo sem benefício; usar tarde demais gera acoplamento difícil de corrigir.
+
 ## Arquitetura em Camadas
 Organiza o sistema em camadas com responsabilidades bem definidas, separando regras de negócio de infraestrutura. Isso melhora manutenção, testabilidade e evolução do sistema, mas pode introduzir overhead e rigidez se mal aplicado.
 
