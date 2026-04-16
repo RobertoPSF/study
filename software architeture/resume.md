@@ -109,6 +109,11 @@ Estilo arquitetural baseado em recursos e HTTP, com comunicação stateless. Sim
 ## Retry e Backoff
 Permite reexecutar operações falhas com intervalos crescentes, aumentando resiliência sem causar sobrecarga no sistema.
 
+## Service Mesh
+Service Mesh é uma camada de infraestrutura que gerencia comunicação entre serviços, removendo essa responsabilidade do código de aplicação. Ele utiliza o sidecar pattern para interceptar tráfego e aplicar políticas como retries, segurança e observabilidade.
+
+Istio oferece controle avançado com alta complexidade operacional, enquanto Linkerd prioriza simplicidade com menos flexibilidade. O uso de Service Mesh desloca a complexidade do código para a infraestrutura e só faz sentido em sistemas distribuídos maduros.
+
 ## SQL vs NoSQL
 SQL prioriza consistência e estrutura rígida. NoSQL prioriza escalabilidade e flexibilidade, geralmente aceitando consistência eventual.
 
