@@ -33,7 +33,6 @@ Processo de estimar e ajustar recursos para suportar carga atual e futura. Envol
 Protege o sistema interrompendo chamadas para serviços que estão falhando, evitando efeito cascata. Após um período, permite tentativas controladas para verificar recuperação.
 
 ## Clean Architeture vs Hexagonal vs Onion
-
 Hexagonal, Onion e Clean Architecture defendem a mesma ideia central: regras de negócio não devem depender de detalhes externos. A Dependency Rule obriga as dependências a apontarem para dentro, protegendo o domínio.
 
 Hexagonal enfatiza portas e adapters, sendo forte para integrações. Onion enfatiza camadas concêntricas e separação do domínio. Clean Architecture combina as duas e adiciona uma divisão mais explícita entre entidades, casos de uso, adapters e frameworks.
@@ -57,7 +56,6 @@ Domain-Driven Design é uma abordagem para alinhar código ao domínio de negóc
 
 DDD não é sobre arquitetura em si, mas sobre modelagem correta. Ele introduz complexidade intencional para controlar sistemas complexos. Se aplicado sem necessidade, vira sobrecarga. Se ignorado quando necessário, o sistema se torna caótico.
 
-
 ## Escalabilidade
 Capacidade de lidar com aumento de carga. Pode ser vertical (mais recursos) ou horizontal (mais instâncias), sendo esta última a base de sistemas distribuídos modernos.
 
@@ -69,6 +67,13 @@ Baseada em eventos, permite desacoplamento entre componentes. Producers geram ev
 
 ## Fan-Out Pattern
 Fan-out é um padrão onde uma única requisição ou evento é distribuído para múltiplos consumidores que processam em paralelo. Ele aumenta throughput e desacoplamento, sendo comum em arquiteturas orientadas a eventos, mas exige cuidados com consistência, idempotência e tratamento de falhas.
+
+## Feature Flags & Progressive Delivery
+Feature Flags permitem controlar funcionalidades em tempo de execução, separando deploy de release. Progressive Delivery é a prática de liberar mudanças gradualmente para reduzir risco.
+
+Canary libera para uma pequena parte dos usuários, Blue/Green alterna entre versões completas e A/B testing compara variações para otimização.
+
+Essas técnicas aumentam controle e segurança, mas adicionam complexidade. O benefício só aparece quando há disciplina em remoção de flags, definição de métricas e maturidade operacional.
 
 ## Horizontal Scaling
 Horizontal scaling é a capacidade de aumentar a capacidade de um sistema adicionando mais instâncias e distribuindo a carga entre elas. Ele melhora escalabilidade e disponibilidade ao eliminar pontos únicos de falha, mas exige sistemas stateless, uso de load balancing e, frequentemente, particionamento de dados. Em troca, introduz complexidade relacionada à consistência, coordenação e comunicação distribuída.
@@ -103,6 +108,9 @@ Acontecem quando o resultado depende da ordem de execução de operações conco
 ## Rate Limit
 Controla o número de requisições permitidas em um período, protegendo o sistema contra abuso e sobrecarga.
 
+## Rate Limit vs Throttling
+Enquanto o rate limiting define limites **rígidos** de requisições por cliente ou por período de tempo, geralmente resultando em rejeições imediatas (como HTTP 429), o throttling é mais focado em proteger o sistema como um todo, controlando a taxa global de processamento **progressivamente**.
+
 ## REST
 Estilo arquitetural baseado em recursos e HTTP, com comunicação stateless. Simples e amplamente utilizado, mas pode não ser ideal para todos os cenários.
 
@@ -135,5 +143,3 @@ Toda decisão arquitetural envolve abrir mão de algo para ganhar outra propried
 ## Tratamento de Erros
 Define como o sistema reage a falhas, incluindo retries, fallback, logging e recuperação, sendo essencial para resiliência.
 
-## Rate Limit vs Throttling
-Enquanto o rate limiting define limites **rígidos** de requisições por cliente ou por período de tempo, geralmente resultando em rejeições imediatas (como HTTP 429), o throttling é mais focado em proteger o sistema como um todo, controlando a taxa global de processamento **progressivamente**.
