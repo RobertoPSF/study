@@ -45,6 +45,13 @@ Execução simultânea de operações exige controle rigoroso para evitar incons
 ## Consistência Distribuída
 Garante que múltiplos nós mantenham uma visão coerente dos dados. Pode variar entre consistência forte e eventual, dependendo dos trade-offs entre latência, disponibilidade e complexidade.
 
+## CQRS
+CQRS separa responsabilidades de leitura e escrita para permitir modelos e otimizações independentes. O lado de escrita foca em consistência e regras de negócio, enquanto o lado de leitura foca em performance e simplicidade.
+
+A implementação pode variar de simples separação no código até arquiteturas com bancos distintos e sincronização por eventos. O principal trade-off é a introdução de consistência eventual e aumento de complexidade.
+
+CQRS só vale a pena quando essa complexidade resolve um problema real; caso contrário, é apenas sobreengenharia.
+
 ## Dead Letter Queue
 Dead Letter Queue é uma fila onde mensagens que falharam após várias tentativas são armazenadas para análise ou reprocessamento. Ela evita que mensagens problemáticas travem o sistema, melhora resiliência e observabilidade, mas exige tratamento adequado para não se tornar apenas um acúmulo de erros ignorados.
 
