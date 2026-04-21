@@ -72,6 +72,13 @@ Leitura é mais fácil de escalar com réplicas. Escrita exige coordenação, pa
 ## Event-Driven Architecture
 Baseada em eventos, permite desacoplamento entre componentes. Producers geram eventos e consumers reagem, aumentando escalabilidade e resiliência, mas dificultando rastreabilidade e consistência.
 
+## Event Sourcing
+Event Sourcing armazena eventos em vez de estados, permitindo reconstrução completa do histórico e do estado atual. O Event Store mantém um log imutável de eventos, e o estado é derivado via replay.
+
+Essa abordagem oferece rastreabilidade, flexibilidade e forte integração com CQRS, mas adiciona complexidade significativa, incluindo versionamento de eventos, consistência eventual e custo operacional maior.
+
+Seu uso só se justifica quando esses benefícios resolvem problemas reais do domínio; caso contrário, é uma abstração cara.
+
 ## Fan-Out Pattern
 Fan-out é um padrão onde uma única requisição ou evento é distribuído para múltiplos consumidores que processam em paralelo. Ele aumenta throughput e desacoplamento, sendo comum em arquiteturas orientadas a eventos, mas exige cuidados com consistência, idempotência e tratamento de falhas.
 
