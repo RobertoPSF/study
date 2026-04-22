@@ -52,6 +52,13 @@ A implementação pode variar de simples separação no código até arquitetura
 
 CQRS só vale a pena quando essa complexidade resolve um problema real; caso contrário, é apenas sobreengenharia.
 
+## Data Modeling
+Modelagem de dados moderna reconhece que OLTP e OLAP têm objetivos diferentes. OLTP prioriza consistência e escrita eficiente, usando modelos normalizados. OLAP prioriza leitura e análise, usando modelos desnormalizados.
+
+A separação entre esses dois mundos permite otimizar cada um de forma independente. Desnormalização é uma ferramenta para melhorar performance de leitura, mas deve ser aplicada com controle.
+
+A escolha correta depende dos padrões de acesso e da escala do sistema. Ignorar essa distinção leva a sistemas que não performam bem nem em escrita nem em leitura.
+
 ## Dead Letter Queue
 Dead Letter Queue é uma fila onde mensagens que falharam após várias tentativas são armazenadas para análise ou reprocessamento. Ela evita que mensagens problemáticas travem o sistema, melhora resiliência e observabilidade, mas exige tratamento adequado para não se tornar apenas um acúmulo de erros ignorados.
 
