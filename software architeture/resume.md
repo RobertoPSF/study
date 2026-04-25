@@ -59,6 +59,11 @@ A separação entre esses dois mundos permite otimizar cada um de forma independ
 
 A escolha correta depende dos padrões de acesso e da escala do sistema. Ignorar essa distinção leva a sistemas que não performam bem nem em escrita nem em leitura.
 
+## Data Lakes vs Data Warehouses vs Lakehouses
+Data Warehouse armazena dados estruturados e tratados, priorizando consistência e performance para análise. Data Lake armazena dados brutos com alta flexibilidade, mas exige governança para evitar desorganização. Lakehouse combina características dos dois, permitindo flexibilidade com controle.
+
+A escolha depende do tipo de dado, do nível de maturidade da equipe e dos requisitos de análise. Não existe solução universal, apenas trade-offs bem ou mal gerenciados.
+
 ## Dead Letter Queue
 Dead Letter Queue é uma fila onde mensagens que falharam após várias tentativas são armazenadas para análise ou reprocessamento. Ela evita que mensagens problemáticas travem o sistema, melhora resiliência e observabilidade, mas exige tratamento adequado para não se tornar apenas um acúmulo de erros ignorados.
 
@@ -148,6 +153,13 @@ SQL prioriza consistência e estrutura rígida. NoSQL prioriza escalabilidade e 
 
 ## System Design
 System Design é o processo de projetar sistemas completos considerando requisitos funcionais e não funcionais, integrando conceitos como escalabilidade, consistência, concorrência e resiliência. O foco está em tomar decisões baseadas em trade-offs e construir soluções que funcionem em produção, não apenas em teoria.
+
+## Streaming Systems
+Kafka é um log distribuído que permite processar eventos em escala. Partições permitem paralelismo, mas limitam ordenação a nível local. Ordering é garantido apenas dentro de cada partição, exigindo modelagem cuidadosa com chaves.
+
+Delivery guarantees definem o comportamento de entrega, sendo at-least-once o mais comum na prática. Offsets controlam progresso de consumo e impactam diretamente perda ou duplicação de mensagens.
+
+Kafka oferece grande poder de escala e desacoplamento, mas introduz complexidade significativa. Seu uso só se justifica quando esses benefícios resolvem problemas reais de throughput e integração.
 
 ## Task Leasing
 Atribui tarefas a workers com tempo limitado. Se o worker falhar, a tarefa volta para a fila, garantindo confiabilidade com risco de duplicação.
