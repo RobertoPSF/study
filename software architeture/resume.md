@@ -75,6 +75,14 @@ Domain-Driven Design é uma abordagem para alinhar código ao domínio de negóc
 
 DDD não é sobre arquitetura em si, mas sobre modelagem correta. Ele introduz complexidade intencional para controlar sistemas complexos. Se aplicado sem necessidade, vira sobrecarga. Se ignorado quando necessário, o sistema se torna caótico.
 
+## Embbedings and Vector Databases
+Embeddings transformam dados em vetores que capturam significado semântico. Bancos vetoriais permitem armazenar e buscar esses vetores de forma eficiente.
+
+ANN e algoritmos como HNSW tornam possível encontrar vizinhos próximos em alta dimensão com boa performance, sacrificando precisão absoluta.
+
+Essa abordagem é poderosa para busca e recomendação, mas introduz complexidade e depende da qualidade dos modelos. Só faz sentido quando similaridade semântica é um requisito real do sistema.
+
+
 ## Escalabilidade
 Capacidade de lidar com aumento de carga. Pode ser vertical (mais recursos) ou horizontal (mais instâncias), sendo esta última a base de sistemas distribuídos modernos.
 
