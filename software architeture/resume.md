@@ -82,7 +82,6 @@ ANN e algoritmos como HNSW tornam possível encontrar vizinhos próximos em alta
 
 Essa abordagem é poderosa para busca e recomendação, mas introduz complexidade e depende da qualidade dos modelos. Só faz sentido quando similaridade semântica é um requisito real do sistema.
 
-
 ## Escalabilidade
 Capacidade de lidar com aumento de carga. Pode ser vertical (mais recursos) ou horizontal (mais instâncias), sendo esta última a base de sistemas distribuídos modernos.
 
@@ -138,6 +137,14 @@ Separa geração e processamento de tarefas usando filas. Permite escalabilidade
 
 ## Race Conditions
 Acontecem quando o resultado depende da ordem de execução de operações concorrentes. São difíceis de reproduzir e podem gerar inconsistências críticas.
+
+## RAG
+RAG combina recuperação de informação com geração de linguagem para produzir respostas mais precisas e contextualizadas. O pipeline envolve ingestão, chunking, embeddings, retrieval, construção de contexto e geração.
+
+A qualidade depende principalmente da etapa de recuperação e da organização do contexto. Avaliação exige métricas específicas para retrieval e geração.
+
+RAG é poderoso, mas complexo. Só vale a pena quando há necessidade real de incorporar conhecimento externo ou atualizado nas respostas.
+
 
 ## Rate Limit
 Controla o número de requisições permitidas em um período, protegendo o sistema contra abuso e sobrecarga.
