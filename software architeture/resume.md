@@ -29,6 +29,14 @@ Em sistemas distribuídos, é impossível garantir simultaneamente consistência
 ## Capacity Planning
 Processo de estimar e ajustar recursos para suportar carga atual e futura. Envolve entender throughput, latência, uso de recursos e padrões de tráfego, evitando tanto gargalos quanto desperdício.
 
+## Chunking & Context Engineering
+Chunking e Context Engineering determinam como dados são apresentados ao modelo em sistemas baseados em embeddings e RAG. Chunking define como dividir dados preservando significado, enquanto overlap ajuda a evitar perda de contexto.
+
+Metadata permite controle e filtragem mais precisa, e re-ranking melhora a qualidade dos resultados ao custo de latência. Context Engineering organiza tudo isso em um contexto útil para o modelo.
+
+A qualidade do sistema depende diretamente dessas decisões. Sem um bom contexto, mesmo o melhor modelo falha.
+
+
 ## Circuit Breaker
 Protege o sistema interrompendo chamadas para serviços que estão falhando, evitando efeito cascata. Após um período, permite tentativas controladas para verificar recuperação.
 
