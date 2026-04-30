@@ -36,7 +36,6 @@ Metadata permite controle e filtragem mais precisa, e re-ranking melhora a quali
 
 A qualidade do sistema depende diretamente dessas decisões. Sem um bom contexto, mesmo o melhor modelo falha.
 
-
 ## Circuit Breaker
 Protege o sistema interrompendo chamadas para serviços que estão falhando, evitando efeito cascata. Após um período, permite tentativas controladas para verificar recuperação.
 
@@ -121,6 +120,11 @@ Horizontal scaling é a capacidade de aumentar a capacidade de um sistema adicio
 
 ## Idempotência
 Garante que executar a mesma operação múltiplas vezes resulta no mesmo estado final. É essencial em sistemas com retries, filas e processamento distribuído.
+
+## LLM System Design
+LLM System Design envolve orquestrar múltiplas etapas, controlar custo e latência com caching e escolher entre pipelines e agentes. Orquestração define como o sistema se adapta ao contexto, caching melhora eficiência e pipelines oferecem controle enquanto agentes oferecem flexibilidade.
+
+Sistemas maduros combinam essas abordagens, equilibrando previsibilidade e adaptabilidade. O desafio central é controlar a variabilidade do LLM sem perder sua utilidade.
 
 ## Load Distribution
 Distribui carga entre múltiplas instâncias para evitar gargalos e melhorar utilização de recursos. Estratégias variam de simples round robin até algoritmos baseados em estado.
